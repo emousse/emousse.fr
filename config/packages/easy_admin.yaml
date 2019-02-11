@@ -1,0 +1,22 @@
+easy_admin:
+  entities:
+    Article:
+      class: App\Entity\Article
+      list:
+        fields:
+          - 'title'
+          - 'text'
+          - 'updatedAt'
+          - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+      # ...
+      show:
+        fields:
+          - 'title'
+          - 'text'
+          - 'updatedAt'
+          - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+      form:
+        fields:
+          - 'title'
+          - 'text'
+          - { property: 'imageFile', type: 'vich_image' }
