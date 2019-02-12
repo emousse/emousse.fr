@@ -13,8 +13,23 @@ use App\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class EmousseBlogController extends AbstractController
 {
-
-
+    /**
+     * @Route("/")
+     */
+    public function home()
+    {
+        return $this->render('base.html.twig');
+    }
+    /**
+     * @Route("/article/{id}")
+     */
+    public function singleArticle(Article $article)
+    {
+        return $this->render('article/single.html.twig',[
+            'article' => $article,
+        ]);
+    }
 }
