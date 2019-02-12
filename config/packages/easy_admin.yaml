@@ -1,9 +1,15 @@
 easy_admin:
+  design:
+    assets:
+      js:
+        - 'https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js'
+        - 'js/custom_backend.js'
   entities:
     Article:
       class: App\Entity\Article
       list:
         fields:
+          - 'id'
           - 'title'
           - 'text'
           - 'updatedAt'
@@ -11,6 +17,7 @@ easy_admin:
       # ...
       show:
         fields:
+          - 'id'
           - 'title'
           - 'text'
           - 'updatedAt'
@@ -18,5 +25,5 @@ easy_admin:
       form:
         fields:
           - 'title'
-          - 'text'
+          - { property: 'text', type: 'textarea', css_class: 'js-markdown-input' }
           - { property: 'imageFile', type: 'vich_image' }
