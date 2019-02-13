@@ -26,4 +26,5 @@ easy_admin:
         fields:
           - 'title'
           - { property: 'text', type: 'textarea', css_class: 'js-markdown-input' }
+          - { property: 'tags', type: 'collection', type_options: { entry_type: 'App\Form\TagType', allow_delete: true, allow_add: true, by_reference: false } }
           - { property: 'imageFile', type: 'vich_image' }
