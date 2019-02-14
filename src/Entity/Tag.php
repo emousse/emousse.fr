@@ -67,6 +67,11 @@ class Tag
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function removeArticle(Article $article): self
     {
         if ($this->articles->contains($article)) {

@@ -32,4 +32,16 @@ class EmousseBlogController extends AbstractController
             'article' => $article,
         ]);
     }
+
+    /**
+     * @Route("/entity")
+     */
+    public function entity()
+    {
+        $form = $this->createForm('App\Form\ArticleType');
+
+        return $this->render('article/form.html.twig',[
+            'form'=> $form->createView(),
+        ]);
+    }
 }
