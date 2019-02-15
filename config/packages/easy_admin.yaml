@@ -1,6 +1,7 @@
 easy_admin:
   user:
     display_name: true
+    name_property_path: 'email'
     display_avatar: false
   design:
     assets:
@@ -32,3 +33,13 @@ easy_admin:
 #          - { property: 'tags', type: 'collection', type_options: { entry_type: 'App\Form\TagType', allow_delete: true, allow_add: true, by_reference: false } }
           - { property: 'tags', type: 'entity', type_options: {class: 'App\Entity\Tag', by_reference: false, multiple: true } }
           - { property: 'imageFile', type: 'vich_image' }
+
+    Tag:
+      class: App\Entity\Tag
+      list:
+        fields:
+          - 'id'
+          - 'name'
+      form:
+        fields:
+          - 'name'
