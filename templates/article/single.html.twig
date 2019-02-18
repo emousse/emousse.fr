@@ -2,17 +2,30 @@
 {% block body %}
 
     <article class="card mb-3">
-        <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="article-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ article.title }}</h5>
-            <span>
-                {% for tag in article.tags %}
-                    <a href="#" class="badge badge-light"><i class="devicon-{{ tag.name | lower }}-plain colored"></i></a>
-                {% endfor %}
-            </span>
-            <p class="card-text">{{ article.text | raw }}</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="row">
+            <div class="col-md-4 summary">
+
+            </div>
+            <div class="col-md-8">
+                <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="article-img-top" alt="...">
+                <h1 class="card-title text-center">{{ article.title }}</h1>
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="card-body">
+                    <span>
+                        {% for tag in article.tags %}
+                            <a href="#" class="badge badge-light"><i class="devicon-{{ tag.name | lower }}-plain colored"></i></a>
+                        {% endfor %}
+                    </span>
+                    <p class="card-text">{{ article.text | raw }}</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
         </div>
+
     </article>
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/generateSummary.js') }}"></script>
 {% endblock %}
