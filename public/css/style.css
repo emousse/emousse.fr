@@ -48,7 +48,8 @@ i{
 }
 
 body{
-    background-color: #121212;
+    /*background-color: #121212;*/
+    background-color: #efefef;
 }
 .progress-container {
     width: 100%;

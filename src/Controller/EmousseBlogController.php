@@ -10,7 +10,10 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Repository\ArticleRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -19,9 +22,16 @@ class EmousseBlogController extends AbstractController
     /**
      * @Route("/")
      */
-    public function home()
+    public function home(ArticleRepository $repo, Request $request, PaginatorInterface $paginator)
     {
-        return $this->render('base.html.twig');
+        $pagination = $paginator->paginate(
+            $repo->getArticleByDate(),
+            $request->query->getInt('page', 1),
+            3
+        );
+        return $this->render('article/archive.html.twig',[
+            'pagination' => $pagination
+        ]);
     }
     /**
      * @Route("/article/{slug}")
