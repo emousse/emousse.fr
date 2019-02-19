@@ -24,7 +24,7 @@ class EmousseBlogController extends AbstractController
         return $this->render('base.html.twig');
     }
     /**
-     * @Route("/article/{id}")
+     * @Route("/article/{slug}")
      */
     public function singleArticle(Article $article)
     {
