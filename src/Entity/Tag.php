@@ -28,6 +28,11 @@ class Tag
      */
     private $articles;
 
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $urls = [];
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -77,6 +82,18 @@ class Tag
         if ($this->articles->contains($article)) {
             $this->articles->removeElement($article);
         }
+
+        return $this;
+    }
+
+    public function getUrls(): ?array
+    {
+        return $this->urls;
+    }
+
+    public function setUrls(?array $urls): self
+    {
+        $this->urls = $urls;
 
         return $this;
     }

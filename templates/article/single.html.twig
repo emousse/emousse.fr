@@ -10,7 +10,7 @@
 
         <ul class="devicon-group">
             {% for tag in article.tags %}
-                <li><a href="#" class="badge badge-light"><i
+                <li><a href="{{ path('app_emousseblog_singletag', { 'name' : tag.name }) }}" class="badge badge-light"><i
                                 class="devicon-{{ tag.name | lower }}-plain colored"></i></a></li>
             {% endfor %}
         </ul>

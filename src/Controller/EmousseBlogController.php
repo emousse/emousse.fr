@@ -10,6 +10,7 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Entity\Tag;
 use App\Repository\ArticleRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -52,6 +53,16 @@ class EmousseBlogController extends AbstractController
 
         return $this->render('article/form.html.twig',[
             'form'=> $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/tag/{name}")
+     */
+    public function singleTag(Tag $tag)
+    {
+        return $this->render('tag/single.html.twig',[
+            'tag' =>$tag,
         ]);
     }
 }
