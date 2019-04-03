@@ -33,6 +33,11 @@ class Tag
      */
     private $urls = [];
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -94,6 +99,18 @@ class Tag
     public function setUrls(?array $urls): self
     {
         $this->urls = $urls;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

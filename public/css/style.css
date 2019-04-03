@@ -8,6 +8,10 @@
     top: 80px;
 }
 .container-bottom {
+
+
+
+
     margin-top: 80px;
 }
 .card-body{
@@ -50,6 +54,13 @@ i{
 body{
     /*background-color: #121212;*/
     background-color: #efefef;
+}
+.single-title{
+    background: #ff3900;
+    position: absolute;
+    top : -20px;
+}
+.card-position{
 }
 .progress-container {
     width: 100%;
