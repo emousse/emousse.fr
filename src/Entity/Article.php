@@ -64,7 +64,7 @@ class Article
 
     /**
      * @ORM\Column(type="datetime")
-     * @@Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 
