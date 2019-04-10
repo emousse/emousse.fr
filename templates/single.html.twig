@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <article class="card mb-3 bg-dark">
+        {% block single_body %}
+        {% endblock %}
+    </article>
+    <div class="fixed-bottom bg-black">
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/generateSummary.js') }}"></script>
+{% endblock %}

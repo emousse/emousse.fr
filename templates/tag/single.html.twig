@@ -1,35 +1,27 @@
-{% extends 'base.html.twig' %}
-{% block body %}
-    <article class="card mb-3 bg-dark">
-        <div style="background-color: #efefef;" class="article-img-top"></div>
-        <div class="card-title card-title-custom text-center">
-            <h1>{{ tag.name }}</h1>
-        </div>
-
+{% extends 'single.html.twig' %}
+{% block single_body %}
+    <div style="background-color: #efefef;" class="article-img-top"></div>
+    <div class="card-title card-title-custom text-center">
+        <h1>{{ tag.name }}</h1>
         <ul class="devicon-group">
             <li><a href="#" class="badge badge-light"><i
                             class="devicon-{{ tag.name | lower }}-plain colored"></i></a></li>
         </ul>
+    </div>
 
-        <div data-spy="scroll" data-target="#list-example" data-offset="0" class="card-body">
-            <p class="card-text">
-                {% if tag.urls %}
-                    <h1>Références</h1>
-                    <ul class="list-group list-group-flush">
-                        {% for url in tag.urls %}
-                            <li class="list-group-item"><a href="{{ url }}">{{ url }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </p>
-        </div>
-        <div class="card-footer text-muted">
-            Last updated 3 mins ago
-        </div>
-    </article>
-    <div class="fixed-bottom bg-black">
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
+    <div data-spy="scroll" data-target="#list-example" data-offset="0" class="card-body">
+        <p class="card-text">
+            {% if tag.urls %}
+                <h1>Références</h1>
+                <ul class="list-group list-group-flush">
+                    {% for url in tag.urls %}
+                        <li class="list-group-item"><a href="{{ url }}">{{ url }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </p>
+    </div>
+    <div class="card-footer text-muted">
+        Last updated 3 mins ago
     </div>
 {% endblock %}
