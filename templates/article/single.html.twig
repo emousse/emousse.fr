@@ -3,10 +3,10 @@
     <!--  Essential META Tags -->
 
     <meta property="og:title" content="{{ article.title|title }}">
-    <meta property="og:description" content="{{ article.text|file_excerpt(0)  }}">
-    <meta property="og:image" content="{{ vich_uploader_asset(article, 'imageFile') }}">
-    <meta property="og:url" content="{{ absolute_url('/') }}">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:description" content="{{ article.metaDescription  }}">
+    <meta property="og:image" content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
+    <meta property="og:url" content="{{ app.request.uri }}">
+    <meta name="twitter:card" content="summary_large_image">~
 
 
     <!--  Non-Essential, But Recommended -->
