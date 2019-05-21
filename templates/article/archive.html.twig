@@ -1,22 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {% for article in pagination %}
-        {#<div class="card mb-3 bg-dark">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ article.title }}</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">{{ article.createdAt | date("d/m/Y") }}</small></p>
-                        <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="btn btn-black">Read</a>
-                    </div>
-                </div>
-            </div>
-        </div>#}
-
         <div class="bgcover" style="background:url('{{ vich_uploader_asset(article, 'imageFile') }}');border-radius: 4px;">
             <div class="d-flex align-items-start  flex-column bd-highlight mb-3 bsc" style="height: 270px;background: rgba(23, 25, 24, 0.42)!important">
 
@@ -25,7 +9,7 @@
                 <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="archive-entry-title p-2 text-light mt-auto"><h2>{{ article.title }}</h2></a>
 
 
-                <div class="p-2 archive-entry-excerpt"><p>Retrouvez la position de chaque caisse dans ce guide</p>
+                <div class="p-2 archive-entry-excerpt"><p>{{ article.metaDescription }}</p>
                 </div>
                 <div class="p-2">
                     <span class="tag">
@@ -35,7 +19,7 @@
                     </span>
                 </div>
 
-                <div class="p-2 ml-auto mb-auto text-light define">
+                <div class="p-2 ml-auto mb-auto text-light">
                     <small>{{ article.createdAt | date("d/m/Y") }}</small>
                     <a class="btn-readmore" href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}">Lire Plus</a>
                 </div>
