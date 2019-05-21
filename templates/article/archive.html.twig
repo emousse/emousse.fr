@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {% for article in pagination %}
-        <div class="card mb-3 bg-dark">
+        {#<div class="card mb-3 bg-dark">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img" alt="...">
@@ -14,6 +14,26 @@
                         <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="btn btn-black">Read</a>
                     </div>
                 </div>
+            </div>
+        </div>#}
+
+        <div class="bgcover" style="background:url('{{ vich_uploader_asset(article, 'imageFile') }}');border-radius: 4px;">
+            <div class="d-flex align-items-start  flex-column bd-highlight mb-3 bsc" style="height: 270px;background: rgba(23, 25, 24, 0.42)!important">
+
+                <div class="mb-auto mt-auto"></div>
+
+                <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="archive-entry-title p-2 text-light mt-auto">{{ article.title }}</a>
+
+
+                <div class="p-2 archive-entry-excerpt"><p>Retrouvez la position de chaque caisse dans ce guide</p>
+                </div>
+                <div class="p-2"><span class="tag"><a href="https://thedivisionfrance.fr/category/guide-tutoriel/" rel="category tag">Guide / Tutoriel</a> <a href="https://thedivisionfrance.fr/category/the-division-2/" rel="category tag">The Division 2</a></span></div>
+
+                <div class="p-2 ml-auto mb-auto text-light define">
+                    <small>{{ article.createdAt | date("d/m/Y") }}</small>
+                    <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}"><button type="button" class="btn-readmore ml-2 mb-0"> Lire Plus </button></a>
+                </div>
+
             </div>
         </div>
     {% endfor %}

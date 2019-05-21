@@ -47,6 +47,11 @@
 .bg-black a{
     color: white;
 }
+.bgcover{
+    background-position: center;
+    border-size: cover;
+    background-color: #141415;
+}
 i{
     font-size: 3em;
 }
@@ -75,4 +80,43 @@ body{
 .navbar-nav .nav-link{
     background-color: black;
     color: white;
+}
+
+/**
+ ARCHIVE TEMPLATE
+ */
+.archive-entry-excerpt{
+    background-color: white;
+
+}
+.archive-entry-title{
+    color: #ff3900;
+    border : 2px solid #ff3900;
+}
+
+/**
+ BTN & FX
+ */
+.btn-readmore {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-readmore::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -0.25em;
+    right: -0.25em;
+    background-color: #fc2f70;
+    transform-origin: bottom center;
+    transform: scaleY(0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-readmore:hover::before {
+    transform: scaleY(1);
+    background-color: hsla(341, 97%, 59%, 0.75);
 }
