@@ -99,6 +99,8 @@ body{
  */
 .btn-readmore {
     position: relative;
+    text-decoration: none;
+    color: white;
     z-index: 1;
 }
 
@@ -110,7 +112,7 @@ body{
     bottom: 0;
     left: -0.25em;
     right: -0.25em;
-    background-color: #fc2f70;
+    background-color: #ff3900;
     transform-origin: bottom center;
     transform: scaleY(0.1);
     transition: all 0.1s ease-in-out;
@@ -119,4 +121,8 @@ body{
 .btn-readmore:hover::before {
     transform: scaleY(1);
     background-color: hsla(341, 97%, 59%, 0.75);
+}
+.btn-readmore:hover{
+    color:white;
+    text-decoration: none;
 }

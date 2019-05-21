@@ -22,16 +22,22 @@
 
                 <div class="mb-auto mt-auto"></div>
 
-                <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="archive-entry-title p-2 text-light mt-auto">{{ article.title }}</a>
+                <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}" class="archive-entry-title p-2 text-light mt-auto"><h2>{{ article.title }}</h2></a>
 
 
                 <div class="p-2 archive-entry-excerpt"><p>Retrouvez la position de chaque caisse dans ce guide</p>
                 </div>
-                <div class="p-2"><span class="tag"><a href="https://thedivisionfrance.fr/category/guide-tutoriel/" rel="category tag">Guide / Tutoriel</a> <a href="https://thedivisionfrance.fr/category/the-division-2/" rel="category tag">The Division 2</a></span></div>
+                <div class="p-2">
+                    <span class="tag">
+                        {% for tag in article.tags %}
+                            <a href="{{ path('app_emousseblog_singletag', { 'name' : tag.name }) }}" class="badge badge-light">{{ tag.name | lower }}</a>
+                        {% endfor %}
+                    </span>
+                </div>
 
                 <div class="p-2 ml-auto mb-auto text-light define">
                     <small>{{ article.createdAt | date("d/m/Y") }}</small>
-                    <a href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}"><button type="button" class="btn-readmore ml-2 mb-0"> Lire Plus </button></a>
+                    <a class="btn-readmore" href="{{ path('app_emousseblog_singlearticle', { 'slug' : article.slug }) }}">Lire Plus</a>
                 </div>
 
             </div>
