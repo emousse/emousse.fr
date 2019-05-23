@@ -12,7 +12,7 @@
 
 
 
-    margin-top: 80px;
+    margin-top: 74px;
 }
 .card-body{
     color: white;
@@ -55,10 +55,15 @@
 i{
     font-size: 3em;
 }
-
+/**
+ GENERAL RULES
+ */
 body{
     /*background-color: #121212;*/
     background-color: #efefef;
+    font-family: mrs-eaves,serif;
+    font-weight: 700;
+    font-style: normal;
 }
 .single-title{
     background: #ff3900;
@@ -81,7 +86,26 @@ body{
     background-color: black;
     color: white;
 }
-
+/**
+ HERO TOP
+ */
+.img-me{
+}
+.hero{
+    background-color: #ccc;
+}
+.hero-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0 20px 0;
+}
+.hero-resume
+{
+    background-color: #fff;
+    padding: 20px 180px 20px 10px;
+}
 /**
  ARCHIVE TEMPLATE
  */
@@ -125,4 +149,37 @@ body{
 .btn-readmore:hover{
     color:white;
     text-decoration: none;
+}
+
+.logo-fx {
+    position: relative;
+}
+
+.logo-fx::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-fx:hover::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+
+/**
+ FONTS
+ */
+.ft-ratiomodern{
+    font-family: ratiomodern,serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2em;
 }

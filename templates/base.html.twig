@@ -18,14 +18,16 @@
         <link rel="stylesheet" href="{{ asset('css/prism.css') }}">
         <link rel="stylesheet"
               href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+        <link rel="stylesheet" href="https://use.typekit.net/osn2zqv.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     {% endblock %}
 </head>
 <body>
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-prism">
-        <div class="container"><a class="navbar-brand" href="{{ path('app_emousseblog_home') }}">emousse</a>
+        <div class="container"><a class="navbar-brand ft-ratiomodern logo-fx" href="{{ path('app_emousseblog_home') }}">etmo.dev</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,8 +54,12 @@
         </div>
     </nav>
 </header>
+<div class="hero container-bottom">
+    {% block hero %}
 
-<div class="container container-bottom">
+    {% endblock %}
+</div>
+<div class="container">
     {% block body %}{% endblock %}
 </div>
 
