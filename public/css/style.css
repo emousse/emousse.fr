@@ -64,6 +64,7 @@ body{
     font-family: mrs-eaves,serif;
     font-weight: 700;
     font-style: normal;
+    font-size: 18px;
 }
 .single-title{
     background: #ff3900;
@@ -103,8 +104,23 @@ body{
 }
 .hero-resume
 {
+    position: relative;
     background-color: #fff;
     padding: 20px 180px 20px 10px;
+}
+.hero-resume::before
+{
+content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 1.5em;
+border: .75rem solid transparent;
+    border-top: none;
+
+border-bottom-color: #fff;
+    filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
 }
 /**
  ARCHIVE TEMPLATE
@@ -181,5 +197,5 @@ body{
     font-family: ratiomodern,serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 2em;
+    font-size: 2rem;
 }
