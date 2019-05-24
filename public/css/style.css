@@ -50,6 +50,7 @@
 .bgcover{
     background-position: center;
     border-size: cover;
+    background-repeat: no-repeat;
     background-color: #141415;
 }
 i{
