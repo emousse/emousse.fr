@@ -1,3 +1,10 @@
+/**
+ IMPORT
+ */
+@import url(https://fonts.googleapis.com/css?family=Questrial);
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+
+
 .article-img-top {
     width: 100%;
     max-height: 80vh;
@@ -62,7 +69,7 @@ i{
 body{
     /*background-color: #121212;*/
     background-color: #efefef;
-    font-family: mrs-eaves,serif;
+    font-family: Questrial,serif;
     font-weight: 700;
     font-style: normal;
     font-size: 18px;
@@ -194,8 +201,9 @@ border-bottom-color: #fff;
 /**
  FONTS
  */
+
 .ft-ratiomodern{
-    font-family: ratiomodern,serif;
+    font-family: Arvo,serif;
     font-weight: 800;
     font-style: normal;
     font-size: 2rem;
