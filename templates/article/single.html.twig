@@ -1,26 +1,27 @@
 {% extends 'single.html.twig' %}
 {% block meta %}
-    <!--  Essential META Tags -->
-
-    <meta property="og:title" content="{{ article.title|title }}">
-    <meta property="og:description" content="{{ article.metaDescription  }}">
-    <meta property="og:image" content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="{{ article.title|title }}">
+    <meta name="description"
+          content="{{ article.metaDescription }}">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
     <meta property="og:url" content="{{ app.request.uri }}">
-    <meta name="twitter:card" content="summary_large_image">~
-
-
-    <!--  Non-Essential, But Recommended -->
-
-    <meta property="og:site_name" content="European Travel, Inc.">
-    <meta name="twitter:image:alt" content="Alt text for image">
-
-
-    <!--  Non-Essential, But Required for Analytics -->
-
-    <meta property="fb:app_id" content="your_app_id" />
-    <meta name="twitter:site" content="@website-username">
-
+    <meta property="og:title" content="{{ article.title|title }}">
+    <meta property="og:description"
+          content="{{ article.metaDescription }}">
+    <meta property="og:image"
+          content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ app.request.uri }}">
+    <meta property="twitter:title" content="{{ article.title|title }}">
+    <meta property="twitter:description"
+          content="{{ article.metaDescription }}">
+    <meta property="twitter:image"
+          content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
 {% endblock %}
+{% block title %}{{ parent() }} - {{ article.title|title }}{% endblock %}
 {% block single_body %}
     <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="article-img-top" alt="...">
     <div class="card-title card-title-custom text-right">
