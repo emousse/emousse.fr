@@ -13,7 +13,7 @@
 {% endblock %}
 {% block body %}
     {% for article in pagination %}
-        <div class="bgcover" style="background:url('{{ vich_uploader_asset(article, 'imageFile') }}');border-radius: 4px;">
+        <div class="bgcover" style="background-image:url('{{ vich_uploader_asset(article, 'imageFile') }}');border-radius: 4px;">
             <div class="d-flex align-items-start  flex-column bd-highlight mb-3 bsc" style="height: 270px;background: rgba(23, 25, 24, 0.42)!important">
 
                 <div class="mb-auto mt-auto"></div>
