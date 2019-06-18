@@ -11,7 +11,7 @@
     <meta property="og:description"
           content="{{ article.metaDescription }}">
     <meta property="og:image"
-          content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
+          content="{{ absolute_url(vich_uploader_asset(article, 'imageFile')) }}">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ app.request.uri }}">
@@ -19,7 +19,7 @@
     <meta property="twitter:description"
           content="{{ article.metaDescription }}">
     <meta property="twitter:image"
-          content="{{ app.request.httpHost ~ vich_uploader_asset(article, 'imageFile') }}">
+          content="{{ absolute_url(vich_uploader_asset(article, 'imageFile')) }}">
 {% endblock %}
 {% block title %}{{ parent() }} - {{ article.title|title }}{% endblock %}
 {% block single_body %}
